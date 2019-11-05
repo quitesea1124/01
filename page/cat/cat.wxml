@@ -1,0 +1,45 @@
+<import src="../../template/foot.wxml"></import>
+<view class="top_search">
+    <view class="search_read_only">
+        <image class="search_icon" mode="center" src="../../images/search.png"></image>
+        <input bindblur="searchBtn" bindinput="searchinput" bindtap="showsearch" class="search_content" placeholder="搜索图片、文章、视频"></input>
+    </view>
+</view>
+<view class="scroll_box" style="margin-left:0rpx;">
+    <scroll-view scrollX class="scroll-view_x" style="width: auto;overflow:hidden;">
+        <view bindtap="changeCat" class="item_rank_list {{item.active?'active':''}}" data-idx="{{item.idx}}" wx:for="{{ranklist}}" wx:key="item">
+        {{item.name}}
+        </view>
+    </scroll-view>
+</view>
+<swiper bindchange="change_finish" circular="True" current="{{active_idx}}" duration="200" indicatorActiveColor="rgba(0, 0, 0, 0)" indicatorColor="rgba(0, 0, 0, 0)" indicatorDots="false" lowerThreshold="50" style="margin-left:0rpx; margin-bottom:60rpx;height:5740rpx">
+    <swiper-item style="background-color: transparent;" wx:for="{{allrankpostlist}}" wx:for-item="item_cat" wx:key="id">
+        <view class="classify">
+            <scroll-view scrollY class="classify_detail" scrollWithAnimation="true">
+                <view class="children">
+                    <navigator class="nav_postlist_item" hoverClass="navigator-hover" url="../detail/detail?item={{item.cid}}" wx:for="{{item_cat}}" wx:key="id">
+                        <view class="view_postlist_item">
+                            <view class="view_catpost">
+                                <image class="image_cat_box" mode="center" src="{{item.rank==1?'../../images/first.png':item.rank==2?'../../images/second.png':item.rank==3?'../../images/third.png':'../../images/third.png'}}" style="display:{{item.rank<=3?'block':'none'}}"></image>
+                                <view class="rank_cat_box" style="display:{{item.rank>3?'block':'none'}}">{{item.rank}}</view>
+                                <image class="image_cat_thumb" mode="aspectFit" src="{{item.thumb}}"></image>
+                                <text class="image_cat_item_title" style="margin-left: 350rpx;">{{item.title}}</text>
+                                <view style="margin-left: 350rpx; margin-top: 10rpx;">
+                                    <image class="listpg_first_img" src="../../images/time.png"></image>
+                                    <text class="list_text_view">{{item.posttime}}</text>
+                                    <image class="list_img_view" src="../../images/comments.png"></image>
+                                    <text class="list_text_view">{{item.commentsNum}}</text>
+                                    <image class="list_img_view" src="../../images/view.png"></image>
+                                    <text class="list_text_view">{{item.views}}</text>
+                                    <image class="list_img_view" src="../../images/like.png"></image>
+                                    <text class="list_text_view">{{item.likes}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </navigator>
+                </view>
+            </scroll-view>
+        </view>
+    </swiper-item>
+</swiper>
+<template is="foot" data></template>

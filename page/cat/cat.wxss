@@ -1,0 +1,8 @@
+page {
+    background-color: rgb(255,255,255);
+}
+
+.view_catpost {
+    height: 150rpx;
+    padding-right: 10px;
+}

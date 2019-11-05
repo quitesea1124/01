@@ -1,0 +1,5 @@
+<template name="foot">
+    <view class="footerviewwebsite">
+        <text>© 2019 • 猪元帅</text>
+    </view>
+</template>

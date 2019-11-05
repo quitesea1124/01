@@ -1,0 +1,51 @@
+.view_catpost {
+    height: 150rpx;
+}
+
+.box view.cu-bar {
+    margin-top: 20rpx;
+}
+
+.bg-white {
+    background-color: #fff;
+    color: #ee8ba9;
+}
+
+.cu-bar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    min-height: 90rpx;
+    justify-content: space-between;
+}
+
+.cu-bar .action:last-child {
+    margin-right: 30rpx;
+}
+
+.cu-bar .action:first-child {
+    margin-left: 30rpx;
+    font-size: 30rpx;
+}
+
+.cu-bar .action {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    max-width: 100%;
+}
+
+[class*="cuIcon-"] {
+    font-family: "cuIcon";
+    font-size: inherit;
+    font-style: normal;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-xl {
+    font-size: 36rpx;
+}

@@ -1,0 +1,82 @@
+<import src="../../../template/foot.wxml"></import>
+<view class="wenzi">
+    更新日志
+</view>
+<view class="cu-timeline">
+    <view class="cu-item">
+        <view class="content">
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-cyan">V 1.7</view>
+                <view class="cu-tag line-cyan">2019-10-06</view>
+            </view>
+            <view class="margin-top">1.首页图标优化，UI美化，自动加载</view>
+            <view class="margin-top">2.加入分类，实现快速访问</view>
+            <view class="margin-top">3.个人中心加入广告位，整体布局修改</view>
+            <view class="margin-top">4.代码精简优化</view>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-cyan">V 1.6</view>
+                <view class="cu-tag line-cyan">2019-8-20</view>
+            </view>
+            <view class="margin-top">1.添加返回首页功能</view>
+            <view class="margin-top">2.优化删除部分代码</view>
+            <view class="margin-top">3.简化源码</view>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-cyan">V 1.5</view>
+                <view class="cu-tag line-cyan">2019-8-12</view>
+            </view>
+            <view class="margin-top">1.添加分享朋友圈功能，文章自动生成图片二维码</view>
+            <view class="margin-top">2.添加在线客服功能</view>
+            <view class="margin-top">3.修复公告在苹果手机不能全部显示，修复文章标题在苹果手机和图片冲突显示</view>
+            <view class="margin-top">4.美化文章右侧图片显示,美化文章左侧有一条白线</view>
+            <view class="margin-top">5.部分文章显示bug修复</view>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-cyan">V 1.4</view>
+                <view class="cu-tag line-cyan">2019-6-28</view>
+            </view>
+            <view class="margin-top">1.修改首页的浏览方式，增加按文章分类来浏览</view>
+            <view class="margin-top">2.优化系统运行速度，减少服务器的压力</view>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-cyan">V 1.3</view>
+                <view class="cu-tag line-cyan">2019-5-10</view>
+            </view>
+            <view class="margin-top">1.修复文章中的链接不能复制</view>
+            <view class="margin-top">2.修复上线用户授权显示，不能点赞功能</view>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-cyan">V 1.2</view>
+                <view class="cu-tag line-cyan">2019-5-1</view>
+            </view>
+            <view class="margin-top">1.修复图片显示BUG</view>
+            <view class="margin-top">2.增加评论，点赞，分享功能</view>
+        </view>
+    </view>
+    <view class="cu-item">
+        <view class="content">
+            <view class="cu-capsule radius">
+                <view class="cu-tag bg-cyan">V 1.0</view>
+                <view class="cu-tag line-cyan">2019-4-28</view>
+            </view>
+            <view class="margin-top">1.第一次公测发布上线</view>
+        </view>
+    </view>
+</view>
+<template is="foot" data></template>

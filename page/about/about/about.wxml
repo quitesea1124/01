@@ -1,0 +1,14 @@
+<import src="../../../template/foot.wxml"></import>
+<view class="margin-xl bg-white padding-xl radius shadow-lg">
+    <view class="text-center margin-bottom text-lg  text-grey">关于猪元帅</view>
+    <view class="text-content">
+        <view class="margin-top-sm">你好!欢迎使用猪元帅博客小程序</view>
+        <view class="margin-top-sm">猪元帅致力于提供技术教程文章，每日分享精彩文章。</view>
+        <view class="margin-top-sm">如果您觉得本程序很好用，请记得分享给好友哦～</view>
+        <view class="margin-top-sm" style="color:#0081ff;">联系邮箱：951887973@qq.com</view>
+        <view class="margin-top-sm" style="color:#0081ff;">官方网址：www.zhuyuanshuai.cn</view>
+        <view class="margin-top-sm" style="color:#0081ff;">By:quitesea</view>
+        <view class="margin-top-sm">感谢支持。</view>
+    </view>
+</view>
+<template is="foot" data></template>

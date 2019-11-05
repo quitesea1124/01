@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "canvasdrawer": "../../canvasdrawer/canvasdrawer"
+    },
+    "navigationBarTitleText": "关于猫贝"
+}

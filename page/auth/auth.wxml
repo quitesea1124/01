@@ -1,0 +1,12 @@
+<view class="scope-con">
+    <view class="vx_img">
+        <image src="../../images/wechat_logo.jpg"></image>
+    </view>
+    <view class="scope_title">
+        <view class="title_text">该程序将获取以下授权：</view>
+        <view class="title_state">
+            <text>获取您的公开信息（昵称、头像等）</text>
+        </view>
+        <button bindgetuserinfo="bindGetUserInfo" class="scope_btn" openType="getUserInfo">允许授权登陆</button>
+    </view>
+</view>

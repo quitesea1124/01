@@ -1,0 +1,7 @@
+<view class="container" style="padding-top: 100rpx;">
+    <image class="share-image" src="{{shareImage}}"></image>
+    <canvasdrawer bind:getImage="eventGetImage" class="canvasdrawer" painting="{{painting}}"></canvasdrawer>
+    <view class="sharetext">
+        <text>{{notification}}</text>
+    </view>
+</view>

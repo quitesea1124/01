@@ -1,0 +1,59 @@
+<import src="../../template/foot.wxml"></import>
+<view class="minheight view_section" style="display:{{topswiper}}">
+    <swiper autoplay="True" circular="True" class="index_swiper" duration="200" interval="3000" lowerThreshold="50" nextMargin="40rpx" previousMargin="20rpx">
+        <swiper-item class="m_full" style="background-color: transparent;" wx:for="{{swipelist}}" wx:key="id">
+            <navigator class="navigator_item" hoverClass="navigator-hover" url="../detail/detail?item={{item.cid}}">
+                <image mode="aspectFill" src="{{item.thumb}}" style="width:100%;"></image>
+                <view class="swiper-mask"></view>
+                <view class="swiper-desc">
+                    <text>{{item.title}}</text>
+                </view>
+            </navigator>
+        </swiper-item>
+    </swiper>
+    <view class="svg-box">
+        <view class="svg-a"></view>
+        <view class="svg-b"></view>
+    </view>
+</view>
+<view style="display:{{navshow}}">
+    <view class="top-Nav">
+        <view catchtap="onNavRedirect" class="top-item" data-appid="{{item.appid}}" data-extraData="{{item.extraData}}" data-redicttype="{{item.redirecttype}}" data-url="{{item.url}}" id="{{item.id}}" wx:for="{{topNav}}" wx:key="id">
+            <view>
+                <image src="{{item.image}}"></image>
+            </view>
+            <view>
+                <text>{{item.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="width: 100%; height:100%;">
+    <scroll-view scrollWithAnimation scrollX class="bg-white nav" scrollLeft="{{scrollLeft}}">
+        <view bindtap="changeCat" class="cu-item {{item.active?'actives':''}}" data-mid="{{item.mid}}" id="{{item.id_tag}}" wx:for="{{allcatslist}}" wx:key="item">
+        {{item.name}}
+        </view>
+    </scroll-view>
+    <swiper bindchange="change_finish" circular="True" current="{{current_cat}}" duration="200" indicatorActiveColor="rgba(0, 0, 0, 0)" indicatorColor="rgba(0, 0, 0, 0)" indicatorDots="false" lowerThreshold="50" style="height:{{postheight}}">
+        <swiper-item style="background-color: transparent;" wx:for="{{allcatpostlist}}" wx:for-item="item_cat" wx:key="id">
+            <view class="classify">
+                <scroll-view scrollY class="classify_detail" scrollWithAnimation="true" style="height: {{height}}px">
+                    <view class="children">
+                        <navigator class="list-item has-img w-100" url="../detail/detail?item={{item.cid}}" wx:for="{{currentpost}}" wx:key="id">
+                            <view class="view_catpost" style="height:auto">
+                                <image class="cover-100" mode="aspectFill" src="{{item.thumb[0].str_value}}"></image>
+                            </view>
+                            <view class="posttime">
+                                <text>{{item.posttime}}</text>
+                            </view>
+                            <view class="content-title content-title-100">
+                                <text>{{item.title}}</text>
+                            </view>
+                        </navigator>
+                    </view>
+                </scroll-view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <template is="foot" data></template>
+</view>

@@ -1,0 +1,112 @@
+<import src="../../towxml/entry.wxml"></import>
+<import src="../../template/foot.wxml"></import>
+<view class="container log-list">
+    <text class="log-item" wx:key = "index" wx:for="{{logs}}" wx:for-item="log">{{index+1}}. {{log}}</text>
+</view>
+<view class="thum-mask">
+    <image class="cover cover-100 img-mask" mode="aspectFill" src="{{item.thumb}}"></image>
+</view>
+<view class="fd">
+    <view class="minheight detail_info" style="min-height: 220rpx;">
+        <text class="m-block text_title">{{item.title}}</text>
+        <view style="margin-left: 20rpx; margin-bottom: 5rpx;">
+            <image class="listpg_first_img" src="../../images/time.png"></image>
+            <text class="list_text_view">{{createdtime}}</text>
+            <image class="list_img_view" src="../../images/comments.png"></image>
+            <text class="list_text_view">{{item.commentsNum}}</text>
+            <image class="list_img_view" src="../../images/view.png"></image>
+            <text class="list_text_view">{{item.views}}</text>
+            <image class="list_img_view" src="../../images/like.png"></image>
+            <text class="list_text_view">{{item.likes}}</text>
+        </view>
+        <scroll-view lowerThreshold="50" scrollX="True" style="margin-top: 20rpx; width: 100%; overflow-x: auto; overflow-y: hidden; " upperThreshold="50">
+            <view style="display: flex;">
+                <view style="margin-left: 16rpx; margin-bottom: 16rpx;" wx:for="{{item.category}}" wx:for-item="m_categories" wx:key="id">
+                    <navigator class="nav_cat_item" hoverClass="navigator-hover" style="background: {{m_categories.background}}" url="../list/list?mid={{m_categories.mid}}&name={{m_categories.name}}">
+                        <text># {{m_categories.name}}</text>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+<template is="entry" data="{{...content}}"></template>
+<view class="minheight view_section" style="padding:0 30rpx;background-color:#fff">
+    <text class="m-block text_section_title">点赞 <text style="font-size:22rpx;color:#545454;padding-left:10rpx;">{{item.likes}}人已点赞</text>
+    </text>
+    <scroll-view class="m_border" lowerThreshold="50" scrollX="True" style="width: 100%; overflow-x: auto; overflow-y: hidden; " upperThreshold="50">
+        <view class="post_view">
+            <view style="margin-right: 10px;width: 70rpx;" wx:for="{{likelist}}" wx:key="id">
+                <image class="detaillikeimg" mode="aspectFit" src="{{item.avatarUrl}}" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat;"></image>
+            </view>
+        </view>
+    </scroll-view>
+    <text class="m-block text_section_title" style="margin-top: 30rpx">评论<text style="font-size:22rpx;color:#545454;padding-left:10rpx;">各抒己见</text>
+    </text>
+    <view class="commentlistitem" wx:for="{{commentlist}}" wx:key="id">
+        <navigator class="nav_userlink" hoverClass="navigator-hover">
+            <view class="likeuser fm2" style="background-image:url({{item.authorImg}})"></view>
+        </navigator>
+        <view class="minheight" style="flex: 1 1 0%; margin-left: 10px;">
+            <view class="view_comment">
+                <navigator hoverClass="navigator-hover">
+                    <text style="font-size: 12px;color: rgb(27, 91, 166);display: block;"> {{item.author}} </text>
+                </navigator>
+            </view>
+            <text bindtap="replayto" class="m-block comment_text" data-author="{{item.author}}" data-authorid="{{item.coid}}"> {{item.text}}
+                </text>
+            <view class="replay_view" wx:for="{{item.replays}}" wx:for-item="replay" wx:key="replays">
+                <view bindtap="replayto" class="replay_text" data-author="{{replay.author}}" data-authorid="{{replay.coid}}">
+                        {{replay.author}} 回复{{replay.parentitem[0].author}}:{{replay.text}}
+                    </view>
+            </view>
+            <view class="comment_operate">
+                <text class="listitem_creattime"> {{item.comcreatedtime}} </text>
+            </view>
+        </view>
+    </view>
+    <text class="m-block text_section_title" style="margin-top: 30rpx; display:{{display_related}}">相关阅读 </text>
+    <view class="classify" style="margin-bottom:46rpx;">
+        <scroll-view scrollY class="classify_detail" scrollWithAnimation="true">
+            <view class="children">
+                <navigator class="nav_postlist_item" hoverClass="navigator-hover" url="../detail/detail?item={{item.cid}}" wx:for="{{related_post}}" wx:key="id">
+                    <view class="view_postlist_item">
+                        <view class="view_catpost">
+                            <image class="image_cat_thumb" mode="aspectFit" src="{{item.thumb[0].str_value}}"></image>
+                            <text class="image_cat_item_title" style="padding-left:20rpx">{{item.title}}</text>
+                            <view style="margin-left: 140px; margin-top: 10rpx;">
+                                <image class="listpg_first_img" src="../../images/time.png"></image>
+                                <text class="list_text_view">{{item.posttime}}</text>
+                                <image class="list_img_view" src="../../images/comments.png"></image>
+                                <text class="list_text_view">{{item.commentsNum}}</text>
+                                <image class="list_img_view" src="../../images/view.png"></image>
+                                <text class="list_text_view">{{item.views}}</text>
+                                <image class="list_img_view" src="../../images/like.png"></image>
+                                <text class="list_text_view">{{item.likes}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="comment-fixed" style="display:{{item.showshare==1?'flex':'none'}};">
+        <view class="comment-respond">
+            <view class="comment-box">
+                <view catchtap="navigateBack" class="zan-icon zan-icon-wap-home zan-font-20 icon-home"></view>
+                <input bindblur="cmloss" bindfocus="cmfocus" bindinput="cminput" class="comment-input" focus="{{focus}}" placeholder="{{cmplaceholder}}" type="text" value="{{cmtext}}"></input>
+                <button bindtap="sendcm" class="comment-button touch-active" formType="submit">发送</button>
+                <view bindtap="zanstart" class="cmview">
+                    <image class="img-plus" mode="scaleToFill" src="{{zanimg}}"></image>
+                </view>
+                <button class="cmview" openType="share" plain="true" style="border:none; margin-top:10rpx; margin-left:5rpx; padding:0px; width:auto; display:{{item.showshare==1?'flex':'none'}};" type="primary">
+                    <image class="img-plus" mode="scaleToFill" src="../../images/resend.png"></image>
+                </button>
+                <view bindtap="share" class="cmview" style="display:{{item.showshare==1?'flex':'none'}};">
+                    <image class="img-plus" mode="scaleToFill" src="../../images/share.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<template is="foot" data></template>

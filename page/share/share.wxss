@@ -1,0 +1,9 @@
+@import "../../wuBaseWxss/0.wxss";
+
+@import "../../towxml/demo/pages/light/index.wxss";
+
+@import "../../wuBaseWxss/1.wxss";
+
+page {
+    background-color: rgba(250,250,250,1);
+}

@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "page/index/index",
+    "page/list/list",
+    "page/detail/detail",
+    "page/cat/cat",
+    "page/auth/auth",
+    "page/share/share",
+    "page/stat/stat",
+    "page/about/update/update",
+    "page/about/about/about",
+    "page/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f05050",
+    "navigationBarTitleText": "猪元帅",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "color": "#9BABBA",
+    "selectedColor": "#f05050",
+    "borderStyle": "white",
+    "backgroundColor": "#EFEFEF",
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "text": "主页",
+        "iconPath": "images/tar-home.png",
+        "selectedIconPath": "images/tar-home-on.png"
+      },
+      {
+        "pagePath": "page/cat/cat",
+        "text": "排行",
+        "iconPath": "images/tar-person.png",
+        "selectedIconPath": "images/tar-person-on.png"
+      },
+      {
+        "pagePath": "page/about/about",
+        "text": "关于",
+        "iconPath": "images/tar-about.png",
+        "selectedIconPath": "images/tar-about-on.png"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

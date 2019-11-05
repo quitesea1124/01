@@ -1,0 +1,12 @@
+<template name="post">
+    <view class="common-list">
+        <navigator class="list-item has-img w-100" hoverClass="navigator-hover" url="../detail/detail?item={{item.cid}}" wx:for="{{item_cat}}" wx:key="id">
+            <view class="view_catpost" style="margin-bottom:24rpx;">
+                <image class="cover-100" mode="aspectFill" src="{{item.thumb[0].str_value}}"></image>
+            </view>
+            <view class="content-title content-title-100">
+                <text>{{item.title}}</text>
+            </view>
+        </navigator>
+    </view>
+</template>

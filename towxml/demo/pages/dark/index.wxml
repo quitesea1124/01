@@ -1,0 +1,5 @@
+<view class="loading" wx:if="{{isloading}}">
+    <image class="loading__icon" src="/images/loading.svg"></image>
+</view>
+<import src="/towxml/entry.wxml"></import>
+<template is="entry" data="{{...article}}"></template>
